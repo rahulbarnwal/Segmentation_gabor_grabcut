@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_C_COMPILER "/usr/bin/gcc")
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+project(grabcut )
+find_package( OpenCV )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( grabcut gabor_filter_loop.cpp )
+target_link_libraries( grabcut ${OpenCV_LIBS} curl)
